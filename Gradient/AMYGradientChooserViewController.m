@@ -12,6 +12,8 @@
 
 @interface AMYGradientChooserViewController () <AMYTopColorChooserViewControllerDelegate, AMYBottomColorChooserViewControllerDelegate>
 
+@property (nonatomic) BOOL inRainbowMode;
+
 @end
 
 @implementation AMYGradientChooserViewController
@@ -23,7 +25,11 @@
     self.gradientLayer = [CAGradientLayer layer];
     self.gradientLayer.frame = self.view.frame;
     [self.view.layer insertSublayer:self.gradientLayer atIndex:0];
-    
+    [self resetBackground];
+}
+
+- (void)resetBackground
+{
     self.topColor = [UIColor lightGrayColor];
     self.bottomColor = [UIColor whiteColor];
     
@@ -35,14 +41,22 @@
 
 - (void)topColorHasChanged:(UIColor *)color
 {
-    self.topColor = color;
-    [self changeBackgroundGradientPosition:0 withColor:self.topColor];
+        self.topColor = color;
+        [self changeBackgroundGradientPosition:0 withColor:self.topColor];
 }
 
 - (void)bottomColorHasChanged:(UIColor *)color
 {
     self.bottomColor = color;
-    [self changeBackgroundGradientPosition:1 withColor:self.bottomColor];
+    if (self.inRainbowMode)
+    {
+        [self.colorsArray addObject:(id)self.bottomColor.CGColor];
+        self.gradientLayer.colors = self.colorsArray;
+    }
+    else
+    {
+        [self changeBackgroundGradientPosition:1 withColor:self.bottomColor];
+    }
 }
 
 - (void)changeBackgroundGradientPosition:(NSUInteger)position withColor:(UIColor *)color
@@ -65,5 +79,17 @@
     bottomColorChooserDVC.delegate = self;
 }
 
+- (IBAction)rainbowModeButtonTapped:(id)sender
+{
+    if (self.inRainbowMode)
+    {
+        self.inRainbowMode = NO;
+        [self resetBackground];
+    }
+    else
+    {
+        self.inRainbowMode = YES;
+    }
+}
 
 @end

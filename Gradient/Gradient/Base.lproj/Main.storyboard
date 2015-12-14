@@ -43,11 +43,26 @@
                                     <segue destination="BvO-jR-KJ2" kind="embed" id="hYe-iX-g6u"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVs-Mj-M6X">
+                                <rect key="frame" x="264" y="28" width="40" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mVs-Mj-M6X" secondAttribute="height" multiplier="1:1" id="6Jg-M4-mW7"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZN9-Ri-XI0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="🌈"/>
+                                <connections>
+                                    <action selector="rainbowModeButtonTapped:" destination="Tsl-p8-DOL" eventType="touchUpInside" id="9sX-8A-jIE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mVs-Mj-M6X" firstAttribute="top" secondItem="CSE-nh-Ibm" secondAttribute="bottom" constant="8" id="6c8-Qt-5cC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6f3-a4-Xid" secondAttribute="trailing" id="C8L-ZU-mxU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mVs-Mj-M6X" secondAttribute="trailing" id="HUU-pR-LlZ"/>
                             <constraint firstItem="ZQs-Nd-vTu" firstAttribute="top" secondItem="6f3-a4-Xid" secondAttribute="bottom" constant="20" id="YHe-sV-ikV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="uPy-Si-wXG" secondAttribute="leading" id="cIB-ey-Xi9"/>
                             <constraint firstItem="uPy-Si-wXG" firstAttribute="top" secondItem="CSE-nh-Ibm" secondAttribute="bottom" id="qJK-Qh-ydX"/>
@@ -544,9 +559,9 @@
                             <mask key="constraints">
                                 <exclude reference="7jy-h7-DB4"/>
                                 <exclude reference="pb4-XQ-CA3"/>
-                                <exclude reference="hv4-eM-KFG"/>
                                 <exclude reference="bH7-mp-CVZ"/>
                                 <exclude reference="bnu-wB-hHO"/>
+                                <exclude reference="hv4-eM-KFG"/>
                             </mask>
                         </variation>
                     </view>
@@ -1037,11 +1052,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="6Up-dw-7qG"/>
-                                <exclude reference="6eh-PZ-3LW"/>
-                                <exclude reference="pey-NW-9uj"/>
                                 <exclude reference="Frw-VL-9Zh"/>
                                 <exclude reference="bYs-BM-5kk"/>
+                                <exclude reference="pey-NW-9uj"/>
+                                <exclude reference="6Up-dw-7qG"/>
+                                <exclude reference="6eh-PZ-3LW"/>
                             </mask>
                         </variation>
                     </view>
