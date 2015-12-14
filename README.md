@@ -1,6 +1,6 @@
 # Gradient
 
-A simple premise: change the background colors so the gradient changes.
+A simple premise: change the background colors to change the gradient.
 
 You have 48 color options for top and bottom, each one bringing their own mood to the gradient.  Scroll through the buttons to see all the choices!
 
